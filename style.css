@@ -1,1 +1,7 @@
-
+h1{
+    background-color: aqua;
+    color: black;
+    font-size: small;
+    font-weight: bold;
+    font-style: italic;
+}
