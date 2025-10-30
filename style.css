@@ -1,7 +1,20 @@
 h1{
     background-color: aqua;
     color: black;
-    font-size: small;
+    font-size:larger;
     font-weight: bold;
     font-style: italic;
+    padding: 20px;
+}
+h2{
+    background-color: aqua;
+    color: black;
+    font-size:larger;
+    font-weight: bold;
+    font-style: italic;
+    padding: 20px;
+}
+p{
+    background-color: chartreuse;
+    color: black;
 }
