@@ -20,8 +20,8 @@ body {
     /* Makes the body take the full height of the viewport */
 }
 
-h1,p{
-    font-size: 2em;
+h1{
+    font-size: 3em;
     /* Sets the size of the header text */
     text-align: center;
     /* Centers the header text */
