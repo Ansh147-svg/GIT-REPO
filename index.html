@@ -75,7 +75,17 @@
   </nav>
 
     <div id="Home">
-        <h1>Home</h1>
+    <!-- Carousel -->
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+        <img src="Images/4.jpg" alt="Slide 1">
+        <img src="Images/3.jpg" alt="Slide 2">
+        <img src="Images/4.jpg" alt="Slide 3">
+        <img src="Images/3.jpg" alt="Slide 4">
+        </div>
+        <button class="prev" onclick="prevSlide()">❮</button>
+        <button class="next" onclick="nextSlide()">❯</button>
+    </div>
     </div>
     <div id="About">
         <h1>About</h1>
@@ -90,6 +100,26 @@
         <h1>Contact</h1>
     </div>
 
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Support</a>
+      <a href="#">FAQ</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="#" target="_blank">🌐</a>
+      <a href="#" target="_blank">📱</a>
+      <a href="#" target="_blank">📧</a>
+    </div>
+
+    <div class="copyright">
+      &copy; 2025 MyBrand. All rights reserved.
+    </div>
+  </footer>
+
     <script>
         const menu = document.getElementById("mobile-menu");
         const navLinks = document.getElementById("nav-links");
@@ -98,6 +128,41 @@
         menu.classList.toggle("active");
         navLinks.classList.toggle("open");
         });
+    // Carousel JS
+    let currentSlide = 0;
+    const carousel = document.getElementById('carousel');
+    const slides = document.querySelectorAll('.carousel img');
+    const totalSlides = slides.length;
+
+    // Move carousel to the next slide
+    function nextSlide() {
+      if (currentSlide === totalSlides - 1) {
+        currentSlide = 0; // Loop back to the first slide
+      } else {
+        currentSlide++;
+      }
+      updateCarousel();
+    }
+
+    // Move carousel to the previous slide
+    function prevSlide() {
+      if (currentSlide === 0) {
+        currentSlide = totalSlides - 1; // Loop back to the last slide
+      } else {
+        currentSlide--;
+      }
+      updateCarousel();
+    }
+
+    // Update carousel transform based on the current slide
+    function updateCarousel() {
+      const offset = -currentSlide * 100;
+      carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    // Auto slide every 3 seconds
+    setInterval(nextSlide, 3000);
+        
     </script>
 
 </body>

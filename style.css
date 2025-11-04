@@ -19,7 +19,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #000;
+      background: #fff;
       padding: 0.8rem 2rem;
       position: fixed;        /* FIXED NAVBAR */
       top: 0;
@@ -55,6 +55,64 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Carousel Section */
+    .carousel-container {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      /*margin-top: 70px;*/ /* To avoid navbar overlap */
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+    }
+    /* Navigation Arrows */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      font-size: 20px;
+      z-index: 100;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+     .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* ===== MENU TOGGLE ===== */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      height: 3px;
+      width: 25px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+
     /* ===== LINKS ===== */
     .nav-links {
       display: flex;
@@ -63,7 +121,7 @@
 
     .nav-links a {
       position: relative;
-      color: #fff;
+      color: #666;
       font-weight: bold;
       text-decoration: none;
       font-size: 1rem;
@@ -183,7 +241,7 @@
     /* Removes default margin */
     padding: 0;
     /* Removes default padding */
-    display: flex;
+    display:inline;
     /* Enables flexbox layout */
     justify-content: center;
     /* Centers content horizontally */
@@ -283,3 +341,70 @@ h1{
     text-align: center;
     /* Centers the header text */
 }
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 3rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #00adb5;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00adb5;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+    }
+
+    /* ===== FOOTER RESPONSIVENESS ===== */
+    @media (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-links a {
+        margin-bottom: 1rem;
+      }
+    }
