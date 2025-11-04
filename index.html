@@ -7,14 +7,49 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+    <div class="logo">MyBrand</div>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#Home">Home</a>
+      <a href="#About">About</a>
+      <a href="#Services">Services</a>
+      <a href="#Portfolio">Portfolio</a>
+      <a href="#Contact">Contact</a>
+    </div>
+  </nav>
+
     <div id="Home">
         <h1>Home</h1>
     </div>
-    <div id="about">
+    <div id="About">
         <h1>About</h1>
     </div>
-    <div id="contact">
+    <div id="Services">
+        <h1>Services</h1>
+    </div>
+    <div id="Portfolio">
+        <h1>Portfolio</h1>
+    </div>
+    <div id="Contact">
         <h1>Contact</h1>
     </div>
+
+    <script>
+        const menu = document.getElementById("mobile-menu");
+        const navLinks = document.getElementById("nav-links");
+
+        menu.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        navLinks.classList.toggle("open");
+        });
+    </script>
+
 </body>
 </html>

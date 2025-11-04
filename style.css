@@ -10,7 +10,7 @@ body {
     /* Removes default margin */
     padding: 0;
     /* Removes default padding */
-    display: flex;
+    /*display: flex;*/
     /* Enables flexbox layout */
     justify-content: center;
     /* Centers content horizontally */
@@ -19,6 +19,102 @@ body {
     height: 100vh;
     /* Makes the body take the full height of the viewport */
 }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111;
+      padding: 0.8rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Logo */
+    .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Nav Links */
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00adb5;
+    }
+
+    /* ===== MOBILE MENU ===== */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      height: 3px;
+      width: 25px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        right: 0;
+        top: 70px;
+        background: #111;
+        flex-direction: column;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links.open {
+        height: 220px;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Animation for toggle icon */
+    .menu-toggle.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
 
 #Home{
      /* Set a gradient background from purple to teal */
